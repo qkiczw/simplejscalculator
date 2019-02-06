@@ -1,4 +1,37 @@
-body {
-  position: relative;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 33px; }
+* {
+  font-family: 'Roboto Mono', monospace; }
+
+.calc {
+  width: 400px;
+  height: 600px;
+  background-color: #212121; }
+  .calc .calc-screen {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #212121;
+    height: 100px;
+    width: 100%;
+    background-color: #EEEEEE;
+    font-size: 50px;
+    color: #212121; }
+  .calc .row {
+    display: flex; }
+    .calc .row .calc-btns-action {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      background-color: #757575;
+      font-size: 25px;
+      color: #212121; }
+    .calc .row .calc-btns-numb {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      background-color: #9E9E9E;
+      font-size: 25px;
+      color: #212121; }
