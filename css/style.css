@@ -7,6 +7,7 @@
   background-color: #212121;
   border: 1px solid #212121; }
   .calc .calc-screen {
+    box-sizing: border-box;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -14,6 +15,7 @@
     height: 100px;
     width: 100%;
     background-color: #EEEEEE;
+    border: 1px solid #212121;
     font-size: 50px;
     color: #212121; }
     .calc .calc-screen .result {
@@ -32,7 +34,11 @@
       height: 100px;
       background-color: #757575;
       font-size: 25px;
-      color: #212121; }
+      color: #212121;
+      cursor: pointer;
+      transition: 0.5s; }
+    .calc .calc-btns .calc-actions .calc-btn-action:hover {
+      background-color: #616161; }
   .calc .calc-btns .calc-numbers {
     display: flex; }
     .calc .calc-btns .calc-numbers .calc-num-section .calc-btn-num {
@@ -46,7 +52,10 @@
       border: 1px solid #212121;
       font-size: 25px;
       color: #212121;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: 0.5s; }
+    .calc .calc-btns .calc-numbers .calc-num-section .calc-btn-num:hover {
+      background-color: #616161; }
     .calc .calc-btns .calc-numbers .calc-sum-section {
       width: 100px;
       height: 400px; }
@@ -59,4 +68,8 @@
         border: 1px solid #212121;
         font-size: 25px;
         width: 100%;
-        height: 400px; }
+        height: 400px;
+        cursor: pointer;
+        transition: 0.5s; }
+      .calc .calc-btns .calc-numbers .calc-sum-section .calc-btn-sum:hover {
+        background-color: #D84315; }
