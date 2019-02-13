@@ -4,6 +4,7 @@ console.log('Hello !!!');
 let numBtns = document.querySelectorAll('.calc-btn-num');
 let actionBtns = document.querySelectorAll('.calc-btn-action');
 let sumBtn = document.querySelector('.calc-btn-sum');
+let clearBtn = document.querySelector('.clear-btn');
 const calcScreen = document.querySelector('.result');
 let displayNum = '0';
 let valusArray = [];
@@ -47,6 +48,14 @@ function makeSum(e) {
     calcScreen.innerHTML = eval(valString);
 }
 
+function clearAll(e) {
+    let pushedOperation = e.target.innerHTML;
+    displayNum = '0';
+    valusArray = [];
+    calcScreen.innerHTML = displayNum;
+}
+
 numBtns.forEach( num => num.addEventListener('click', displayMessage));
 actionBtns.forEach( action => action.addEventListener('click', makeOperation));
 sumBtn.addEventListener('click', makeSum);
+clearBtn.addEventListener('click', clearAll);
