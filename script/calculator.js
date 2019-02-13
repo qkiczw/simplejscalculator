@@ -19,6 +19,13 @@ function displayMessage(e) {
         console.log(displayNum);    
     };
     calcScreen.innerHTML = displayNum;
+
+    if(displayNum.split('').some(x => x === '.')){
+        console.log('zawiera kropke');
+        document.querySelector('.dot-btn').removeEventListener('click', displayMessage, false);    
+    }else{
+        document.querySelector('.dot-btn').addEventListener('click', displayMessage, false);    
+    }  
     
 }
 
