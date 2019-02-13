@@ -37,6 +37,18 @@ function makeOperation(e) {
         console.log(valusArray);
         displayNum = '0'
     }
+    if (pushedOperation === 'x') {
+        valusArray.push(displayNum);
+        valusArray.push('*');
+        console.log(valusArray);
+        displayNum = '0'
+    }
+    if (pushedOperation === ':') {
+        valusArray.push(displayNum);
+        valusArray.push('/');
+        console.log(valusArray);
+        displayNum = '0'
+    }
 }
 
 function makeSum(e) {
@@ -46,6 +58,7 @@ function makeSum(e) {
     valString = valusArray.join(" ");
     console.log(valString);
     calcScreen.innerHTML = eval(valString);
+    valusArray = [];
 }
 
 function clearAll(e) {
