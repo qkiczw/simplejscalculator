@@ -64,7 +64,7 @@ function makeSum(e) {
     console.log(actionArray);
     valString = actionArray.join(" ");
     console.log(valString);
-    let actionResult = eval(valString);
+    let actionResult = eval(valString).toFixed(6);
     calcScreen.innerHTML = actionResult;
     actionArray = [actionResult.toString()];
     console.log(actionArray);
