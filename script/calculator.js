@@ -7,7 +7,7 @@ let sumBtn = document.querySelector('.calc-btn-sum');
 let clearBtn = document.querySelector('.clear-btn');
 const calcScreen = document.querySelector('.result');
 let displayNum = '0';
-let valusArray = [];
+let actionArray = [];
 
 calcScreen.innerHTML = displayNum;
 
@@ -26,47 +26,51 @@ function makeOperation(e) {
     let pushedOperation = e.target.innerHTML;
     console.log(pushedOperation);
     if (pushedOperation === '+') {
-        valusArray.push(displayNum);
-        valusArray.push(pushedOperation);
-        console.log(valusArray);
+        actionArray.push(displayNum);
+        actionArray.push(pushedOperation);
+        console.log(actionArray);
         displayNum = '0'
     }
     if (pushedOperation === '-') {
-        valusArray.push(displayNum);
-        valusArray.push(pushedOperation);
-        console.log(valusArray);
+        actionArray.push(displayNum);
+        actionArray.push(pushedOperation);
+        console.log(actionArray);
         displayNum = '0'
     }
     if (pushedOperation === 'x') {
-        valusArray.push(displayNum);
-        valusArray.push('*');
-        console.log(valusArray);
+        actionArray.push(displayNum);
+        actionArray.push('*');
+        console.log(actionArray);
         displayNum = '0'
     }
     if (pushedOperation === ':') {
-        valusArray.push(displayNum);
-        valusArray.push('/');
-        console.log(valusArray);
+        actionArray.push(displayNum);
+        actionArray.push('/');
+        console.log(actionArray);
         displayNum = '0'
     }
 }
 
 function makeSum(e) {
     let pushedOperation = e.target.innerHTML;
-    valusArray.push(displayNum);
-    console.log(valusArray);
-    valString = valusArray.join(" ");
+    actionArray.push(displayNum);
+    console.log(actionArray);
+    valString = actionArray.join(" ");
     console.log(valString);
-    calcScreen.innerHTML = eval(valString);
-    valusArray = [];
+    let actionResult = eval(valString);
+    calcScreen.innerHTML = actionResult;
+    actionArray = [actionResult.toString()];
+    console.log(actionArray);
+    displayNum = '';
 }
 
 function clearAll(e) {
     let pushedOperation = e.target.innerHTML;
     displayNum = '0';
-    valusArray = [];
+    actionArray = [];
     calcScreen.innerHTML = displayNum;
 }
+
 
 numBtns.forEach( num => num.addEventListener('click', displayMessage));
 actionBtns.forEach( action => action.addEventListener('click', makeOperation));

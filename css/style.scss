@@ -67,6 +67,7 @@ $font_color: #212121;
 body{
     @include center-item;
     font-family: 'Roboto Mono', monospace;
+    user-select: none;
 }
 
 .calc{
@@ -74,6 +75,7 @@ body{
     height: 600px;
     background-color: $calc_bg_color;
     border: 1px solid $calc_btn_border_color;
+    overflow: hidden;
     .calc-screen{
         box-sizing: border-box;
         display: flex;
